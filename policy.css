@@ -1,0 +1,92 @@
+:root {
+  --bg: #f8f2e7;
+  --green: #183a2a;
+  --gold: #b88931;
+  --gold-2: #d6ad61;
+  --text: #2b241d;
+  --muted: #776b5d;
+  --line: rgba(77, 54, 36, 0.16);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--bg);
+  font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  line-height: 1.9;
+}
+.container { width: min(820px, calc(100% - 40px)); margin-inline: auto; }
+a { color: var(--gold); }
+
+.policy-header {
+  padding: 18px 0;
+  background: #fffaf1;
+  border-bottom: 1px solid var(--line);
+}
+.brand-logo { height: 40px; width: auto; }
+
+.policy-main { padding: 60px 0 80px; }
+h1 {
+  font-size: clamp(28px, 4vw, 38px);
+  margin: 0 0 8px;
+  color: var(--green);
+}
+.updated { color: var(--muted); font-size: 14px; margin: 0 0 36px; }
+
+h2 {
+  font-size: 20px;
+  margin: 40px 0 14px;
+  padding-left: 12px;
+  border-left: 4px solid var(--gold);
+  color: var(--green);
+}
+p { margin: 0 0 16px; }
+ul { margin: 0 0 16px; padding-left: 22px; }
+li { margin-bottom: 6px; }
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 24px;
+  background: #fffaf1;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.info-table th, .info-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+.info-table th {
+  width: 140px;
+  background: rgba(184,137,49,.08);
+  color: var(--green);
+  font-weight: 700;
+}
+.info-table tr:last-child th,
+.info-table tr:last-child td { border-bottom: none; }
+
+.back-link {
+  display: inline-block;
+  margin-top: 30px;
+  font-weight: 700;
+}
+
+.policy-footer {
+  padding: 24px 0;
+  background: var(--green);
+  color: rgba(255,255,255,.7);
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .policy-main { padding: 40px 0 60px; }
+  h1 { font-size: 26px; }
+  h2 { font-size: 18px; }
+  .info-table th, .info-table td { font-size: 13px; padding: 10px 12px; }
+  .info-table th { width: 100px; }
+}
