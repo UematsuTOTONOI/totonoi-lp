@@ -13,6 +13,41 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <!-- Google tag (gtag.js) / GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E17Z6DEL7V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-E17Z6DEL7V');
+  </script>
+
+  <!-- 予約ボタンクリック計測 -->
+  <script>
+    document.addEventListener('click', function (event) {
+      const link = event.target.closest('a');
+
+      if (!link) return;
+
+      const href = link.getAttribute('href') || '';
+      const isReserveButton =
+        link.classList.contains('js-reserve-link') ||
+        href.includes('reserve.489ban.net');
+
+      if (!isReserveButton) return;
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'reserve_click', {
+          event_category: 'reservation',
+          event_label: href,
+          value: 1,
+          transport_type: 'beacon'
+        });
+      }
+    });
+  </script>
 </head>
 <body>
   <!-- 予約URLはここを書き換えてください -->
